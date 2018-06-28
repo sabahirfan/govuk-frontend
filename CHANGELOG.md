@@ -12,6 +12,14 @@
 
   ([PR #N](https://github.com/alphagov/govuk-frontend/pull/N))
 
+- Define size of table in `px` rather than `em`
+
+  This change very slightly increases the padding of table cells on mobile viewport as the use of `em` meant the font size set in the table was used to calculate padding. `padding-top` and `padding-bottom` of cells increase by 1.5px respectively which very slightly increases the height of the table on mobile.
+
+  If your UI has a dependency on tables being a certain height of mobile viewport, this change might affect you.
+
+  ([PR #845](https://github.com/alphagov/govuk-frontend/pull/845))
+
 🆕 New features:
 
 - Pull Request Title goes here
