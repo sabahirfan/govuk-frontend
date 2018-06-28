@@ -255,6 +255,36 @@ describe('Checkboxes', () => {
     })
   })
 
+  it('render hint text', () => {
+    const $ = render('checkboxes', {
+      name: 'example-item-hint',
+      items: [
+        {
+          name: 'gateway',
+          id: 'government-gateway',
+          value: 'gov-gateway',
+          text: 'Sign in with Government Gateway'
+        },
+        {
+          name: 'verify',
+          id: 'govuk-verify',
+          value: 'gov-verify',
+          text: 'Sign in with GOV.UK Verify',
+          hint: {
+            text: 'You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.'
+          }
+        }
+      ]
+    })
+
+    const $component = $('.govuk-checkboxes')
+    const $lastInput = $component.find('.govuk-checkboxes__input').last()
+    expect($lastInput.attr('aria-describedby')).toBe('govuk-verify-item-hint')
+    const $lastItemHint = $component.find('.govuk-checkboxes__hint').last()
+    expect($lastItemHint.attr('id')).toBe('govuk-verify-item-hint')
+    expect($lastItemHint.text()).toContain('You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.')
+  })
+
   it('render conditional', () => {
     const $ = render('checkboxes', {
       name: 'example-conditional',

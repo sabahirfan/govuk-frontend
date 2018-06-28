@@ -10,6 +10,7 @@
 @include govuk-exports("govuk/component/checkboxes") {
   $govuk-checkboxes-size: govuk-spacing(7);
   $govuk-checkboxes-label-padding-left-right: govuk-spacing(3);
+  $govuk-checkboxes-hint-padding-left-right: $govuk-checkboxes-label-padding-left-right;
 
   .govuk-checkboxes__item {
     @include govuk-font($size: 19);
@@ -63,6 +64,12 @@
     // remove 300ms pause on mobile
     -ms-touch-action: manipulation;
     touch-action: manipulation;
+  }
+
+  .govuk-checkboxes__hint {
+    display: block;
+    padding-right: $govuk-checkboxes-hint-padding-left-right;
+    padding-left: $govuk-checkboxes-hint-padding-left-right;
   }
 
   .govuk-checkboxes__input + .govuk-checkboxes__label::before {
