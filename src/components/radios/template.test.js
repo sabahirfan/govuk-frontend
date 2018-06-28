@@ -198,6 +198,35 @@ describe('Radios', () => {
       expect($lastInput.attr('checked')).toEqual('checked')
     })
 
+    it('render hint text', () => {
+      const $ = render('radios', {
+        idPrefix: 'gov',
+        items: [
+          {
+            value: 'gateway',
+            text: 'Sign in with Government Gateway',
+            hint: {
+              text: 'You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before.'
+            }
+          },
+          {
+            value: 'verify',
+            text: 'Sign in with GOV.UK Verify',
+            hint: {
+              text: 'You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.'
+            }
+          }
+        ]
+      })
+
+      const $component = $('.govuk-radios')
+      const $lastInput = $component.find('.govuk-radios__input').last()
+      expect($lastInput.attr('aria-describedby')).toBe('gov-2-item-hint')
+      const $lastItemHint = $component.find('.govuk-radios__hint').last()
+      expect($lastItemHint.attr('id')).toBe('gov-2-item-hint')
+      expect($lastItemHint.text()).toContain('You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.')
+    })
+
     it('render conditional', () => {
       const $ = render('radios', {
         name: 'example-conditional',

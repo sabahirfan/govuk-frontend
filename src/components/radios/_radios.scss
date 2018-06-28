@@ -10,6 +10,7 @@
 @include govuk-exports("govuk/component/radios") {
   $govuk-radios-size: govuk-spacing(7);
   $govuk-radios-label-padding-left-right: govuk-spacing(3);
+  $govuk-radios-hint-padding-left-right: $govuk-radios-label-padding-left-right;
 
   .govuk-radios__item {
     @include govuk-font($size: 19);
@@ -64,6 +65,12 @@
     // remove 300ms pause on mobile
     -ms-touch-action: manipulation;
     touch-action: manipulation;
+  }
+
+  .govuk-radios__hint {
+    display: block;
+    padding-right: $govuk-radios-hint-padding-left-right;
+    padding-left: $govuk-radios-hint-padding-left-right;
   }
 
   .govuk-radios__input + .govuk-radios__label::before {
