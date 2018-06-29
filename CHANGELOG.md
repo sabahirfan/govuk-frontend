@@ -28,6 +28,15 @@
   ([PR #837](https://github.com/alphagov/govuk-frontend/pull/837) and
    [PR #848](https://github.com/alphagov/govuk-frontend/pull/848))
 
+- Use relative line-height
+  Update typography styles to use relative, unitless line-height
+  ([PR #837](https://github.com/alphagov/govuk-frontend/pull/837))
+
+- Allow og:image meta tag to be customisable
+  This meta tag image url can now be overwritten by setting the
+  `assetUrl` variable.
+  ([PR #847](https://github.com/alphagov/govuk-frontend/pull/847))
+
 - Add bottom margin to Tabs component
   All components (or outer layer components) have a bottom margin
   applied to them so spacing feels automatic.
