@@ -20,11 +20,11 @@
 
   ([PR #859](https://github.com/alphagov/govuk-frontend/pull/859))
 
-- Pull Request Title goes here
+- Allow for optional hint for each radio and checkbox item
 
-  Description goes here (optional)
-
-  ([PR #N](https://github.com/alphagov/govuk-frontend/pull/N))
+  You can now pass a hint object (or add in html) to each radio
+  and checkbox item to display the hint
+  ([PR #846](https://github.com/alphagov/govuk-frontend/pull/846))
 
 
 🔧 Fixes:
