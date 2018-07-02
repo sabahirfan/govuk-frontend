@@ -102,6 +102,11 @@
 
   // Focused state
   .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
+    // The transparent outline will be visible when colours are customised
+    // whereas the box-shadow will be invisible.
+    // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+    outline: $govuk-focus-width solid transparent;
+    outline-offset: $govuk-focus-width;
     box-shadow: 0 0 0 $govuk-focus-width $govuk-focus-colour;
   }
 
