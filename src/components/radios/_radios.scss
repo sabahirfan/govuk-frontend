@@ -10,6 +10,9 @@
 @include govuk-exports("govuk/component/radios") {
   $govuk-radios-size: govuk-spacing(7);
   $govuk-radios-label-padding-left-right: govuk-spacing(3);
+  // When the default focus width is applied to a straight edge it has a visually different width
+  // to when it's applied to a curve, so we need to increase it to achieve the same visual width.
+  $govuk-radios-focus-width: $govuk-focus-width + 1px;
 
   .govuk-radios__item {
     @include govuk-font($size: 19);
@@ -99,7 +102,12 @@
 
   // Focused state
   .govuk-radios__input:focus + .govuk-radios__label::before {
-    box-shadow: 0 0 0 4px $govuk-focus-colour;
+    // The transparent outline will be visible when colours are customised
+    // whereas the box-shadow will be invisible.
+    // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+    outline: $govuk-focus-width solid transparent;
+    outline-offset: $govuk-focus-width;
+    box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour;
   }
 
   // Selected state
