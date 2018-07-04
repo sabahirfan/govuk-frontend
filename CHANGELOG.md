@@ -64,6 +64,12 @@
   they will still see a circle even if the background is removed.
   ([PR #852](https://github.com/alphagov/govuk-frontend/pull/852))
 
+- Show focus outlines when customising colours settings on Radios and Checkboxes
+
+  When users customise their colours box-shadow is hidden so it is not
+  clear what they are focused on, by adding an invisible outline it makes this clear again.
+  ([PR #854](https://github.com/alphagov/govuk-frontend/pull/854))
+
 🏠 Internal:
 
 - Fix Design System url in package READMEs and review app
