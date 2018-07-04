@@ -64,6 +64,12 @@
   they will still see a circle even if the background is removed.
   ([PR #852](https://github.com/alphagov/govuk-frontend/pull/852))
 
+- Add border to tag for customised colours
+
+  When a user customises their colours often the background is removed,
+  by adding a border we ensure that the tag component still keeps it's meaning.
+  ([PR #855](https://github.com/alphagov/govuk-frontend/pull/855))
+
 🏠 Internal:
 
 - Fix Design System url in package READMEs and review app
